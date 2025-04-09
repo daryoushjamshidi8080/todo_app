@@ -1,5 +1,6 @@
 from django.shortcuts import render
 # Create your views here.
+from .models import Todo
 
 
 def say_hello(request):
@@ -7,8 +8,5 @@ def say_hello(request):
 
 
 def home(request):
-    person = {
-        'name': 'amir',
-        'age': 25
-    }
-    return render(request, 'home/home.html', context={'person': person, 'h1': 'ali'})
+    data = Todo.objects.all()
+    return render(request, 'home/home.html', context={'data': data})
