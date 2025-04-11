@@ -2,7 +2,8 @@
 
 
 {% block content %}
-    <div style="padding: 5px 10px;">
+    <div class="card-body" style="padding: 5px 10px;">
+        <a href="{% url 'delete' todo.id %}" class="btn btn-danger"> DELETE  </a>
         <h3> {{ todo.title }}</h3>
         <smal>{{ todo.created }}</smal>
         <p> {{ todo.body }} </p>
