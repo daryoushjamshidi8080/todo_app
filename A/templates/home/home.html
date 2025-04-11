@@ -4,7 +4,6 @@
 
 {% block content %}
     {% for i in data %}
-    <h1>{{ i.title }}</h1>
-
+        <spam>{{ forloop.counter }}</spam><a  href="{% url 'details' i.id %}" style="font-size: 20px; text-decoration: none; padding: 5px 10px; font-weight: 700; color: black;">{{ i.title }}</a> <br>
     {% endfor %}
 {% endblock %}
