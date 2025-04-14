@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Todo
 from django.contrib import messages
+from .forms import TodoCreateForm
 
 
 def say_hello(request):
@@ -22,3 +23,8 @@ def delete(request, todo_id):
     messages.success(request, 'todo deleted successfully',
                      extra_tags='success')
     return redirect('home')
+
+
+def create(request):
+    form = TodoCreateForm()
+    return render(request, 'home/create.html', {'form': form})
