@@ -45,3 +45,9 @@ def user_login(request):
         form = UserLoginForm()
 
     return render(request, 'accounts/login.html', {'form': form})
+
+
+def user_logout(request):
+    logout(request)
+    messages.success(request, 'your successfully logout', 'success')
+    return redirect('home')
