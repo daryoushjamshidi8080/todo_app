@@ -38,3 +38,7 @@ def create(request):
         form = TodoCreateForm()
 
     return render(request, 'home/create.html', {'form': form})
+
+
+def update(request, todo_id):
+    print(todo_id)
