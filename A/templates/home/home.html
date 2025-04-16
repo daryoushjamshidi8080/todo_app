@@ -3,6 +3,16 @@
 {% block title %} home {% endblock %}
 
 {% block content %}
+
+
+    <h1>
+        {% if request.user.is_authenticated %}
+
+            wellcome {{ request.user.first_name }}
+        {% else %}
+            <h2>you sucked</h2>
+        {% endif %}
+    </h1>
     <div class="card">
         {% for i in data %}
             <a  href="{% url 'details' i.id %}" style="font-size: 20px; text-decoration: none; padding: 5px 10px; font-weight: 700; color: black;"><spam>{{ forloop.counter }}</spam> {{ i.title }}</a> <br>
