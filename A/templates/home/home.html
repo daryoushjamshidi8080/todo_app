@@ -8,7 +8,7 @@
     <h1>
         {% if request.user.is_authenticated %}
 
-            wellcome {{ request.user.first_name }}
+            welcome {{ request.user.first_name }}
         {% else %}
             <h2>you sucked</h2>
         {% endif %}
